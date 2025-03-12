@@ -1,2 +1,158 @@
-<!DOCTYPE html>
-<p class="">test 2</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portofolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://kit.fontawesome.com/89a4a39f6a.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <main>
+      <header>
+     <nav>
+       <div class="logo">portofolio.</div>
+       <ul class="nav-links">
+         <li><a href="#projects">Socials</a></li>
+         <li><a href="#projects">Projects</a></li>
+         <li><a href="#about">Keyboard</a></li>
+         <li><a href="#projects">Projects</a></li>
+         <li><a href="#contact">About me</a></li>
+         <div class="vl"></div>
+         <li><a href="github.com/halflifedorian"><i class="fa-brands fa-github fa-2xl"></i></a></li>
+       </ul>
+     </nav>
+   </header>
+  
+   <!-- Hero Section -->
+   <section class="hero">
+     <div class="hero-content">
+       <p>Type something...</p>
+       <input type="text" id="dynamic-input" placeholder="">
+       <script>const input = document.getElementById('dynamic-input');
+        const placeholders = [
+          "search..",
+          "github..",
+          "socials..",
+          "keyboard..",
+          "projects..",
+          "about me..",
+        ];
+        let placeholderIndex = 0;
+        let charIndex = 0;
+
+        function typePlaceholder() {
+          if (charIndex < placeholders[placeholderIndex].length) {
+            input.setAttribute('placeholder', placeholders[placeholderIndex].substring(0, charIndex + 1));
+            charIndex++;
+            setTimeout(typePlaceholder, 100); // Typing speed (100ms per character)
+          } else {
+            setTimeout(deletePlaceholder, 1000); // Wait 1 second before deleting
+          }
+        }
+
+        function deletePlaceholder() {
+          if (charIndex >= 0) {
+            input.setAttribute('placeholder', placeholders[placeholderIndex].substring(0, charIndex));
+            charIndex--;
+            setTimeout(deletePlaceholder, 50); // Deleting speed (50ms per character)
+          } else {
+            placeholderIndex = (placeholderIndex + 1) % placeholders.length; // Move to the next placeholder
+            setTimeout(typePlaceholder, 500); // Wait 0.5 seconds before typing again
+          }
+        }
+
+        typePlaceholder(); // Start the animation
+        
+        input.addEventListener('keydown', function (event) {
+          if (event.key === 'Enter') { // Check if Enter key is pressed
+            const userInput = input.value.trim().toLowerCase(); // Get and clean the input
+            redirectUser(userInput); // Call the redirect function
+          }
+        });
+
+        function redirectUser(input) {
+          // Define keywords and their corresponding URLs
+          const redirectMap = {
+            "github": "https://github.com/halflifedorian",
+            "socials": "/socials",
+            "keyboard": "/keyboard",
+            "project": "https://example.com/projects",
+            "about me": "https://example.com/blog"
+          };
+
+          // Check if the input matches a keyword
+          if (redirectMap[input]) {
+            window.location.href = redirectMap[input]; // Redirect to the URL
+          }
+        }</script>
+        <h1>Hello, I'm Dorian</h1>
+        <h3>a design entusiast</h3>
+        <button>learn more</button>
+     </div>
+     <div class="shapes">
+        <div class="square"></div>
+     </div>
+   </section>
+  
+   <!-- About Section -->
+    <section id="about" class="about">
+     <h1>About Me</h1>
+     <div class="about-content">
+       <p>
+          I'm a high school student from France with a passion for multimedia, design, and technology. 
+          I love creating websites, programming, and testing tech-related things. My goal is to study 
+          multimedia and internet technologies at university and turn my passion into a career.
+       </p>
+     </div>
+   </section>
+  
+   <!-- Projects Section -->
+   <section id="projects" class="projects">
+     <h2>My Projects</h2>
+     <div class="project-grid">
+       <div class="project-card">
+         <img src="project1.jpg" alt="Project 1">
+         <h3>Corne keyboard</h3>
+         <p>My wired 48 key keyboard using different layers to work.</p>
+         <button>here</button>
+       </div>
+       <div class="project-card">
+         <img src="project2.jpg" alt="Project 2">
+         <h3>VerdantOS</h3>
+         <p>A archlinux based operating system I'm trying to make using archiso.</p>
+         <button>here</button>
+       </div>
+       <div class="project-card">
+         <img src="project3.jpg" alt="Project 3">
+         <h3>Caac</h3>
+         <p>A python demake of the famous game The Binding Of Isaac.</p>
+         <button>here</button>
+       </div>
+     </div>
+    </section>
+
+   <!-- Contact Section -->
+   <section id="contact" class="contact">
+     <h2>Contact Me</h2>
+     <form>
+       <input type="text" placeholder="Your Name" required>
+       <input type="email" placeholder="Your Email" required>
+       <textarea placeholder="Your Message" required></textarea>
+       <button type="submit" class="btn">Send Message</button>
+     </form>
+   </section>
+
+   <!-- Footer -->
+   <footer>
+      <p>made from scratch by me using neovim</p>
+      <div class="social-links">
+        <a href="#">GitHub</a>
+        <a href="#">Instagram</a>
+      </div>
+    </footer>
+    </main>
+    <script src="index.js"></script>
+  </body>
+</html>
+
