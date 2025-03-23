@@ -291,7 +291,7 @@ button {
   border-radius: 10px;
 }
 
-/* Contact Section */
+
 .contact {
   padding: 80px 10%;
 }
@@ -310,7 +310,6 @@ form input, form textarea {
   border-radius: 5px;
 }
 
-/* Footer */
 footer {
   background: #333;
   color: #fff;
