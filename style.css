@@ -15,6 +15,7 @@ body {
   scroll-behavior: smooth;
 }
 
+
 .popup {
   position: fixed;
   top: 0;
@@ -25,10 +26,15 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000;
-  visibility: hidden;
+  z-index: 1000; 
+  visibility: hidden; 
   opacity: 0;
   transition: visibility 0s, opacity 0.3s ease-in-out;
+}
+
+.popup.show {
+  visibility: visible; 
+  opacity: 1; 
 }
 
 .popup-content {
