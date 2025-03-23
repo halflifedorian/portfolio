@@ -6,11 +6,11 @@ themeToggle.addEventListener('click', () => {
   if (body.classList.contains('dark-theme')) {
     body.classList.remove('dark-theme');
     body.classList.add('light-theme');
-    themeToggle.textContent = '🌙'; // Update button icon
+    themeToggle.textContent = '🌙'; 
   } else {
     body.classList.remove('light-theme');
     body.classList.add('dark-theme');
-    themeToggle.textContent = '☀️'; // Update button icon
+    themeToggle.textContent = '☀️'; 
   }
 });
 
@@ -55,9 +55,9 @@ let currentLanguage = 'en';
 
 languageToggle.addEventListener('click', () => {
   currentLanguage = currentLanguage === 'en' ? 'fr' : 'en';
-  languageToggle.textContent = currentLanguage.toUpperCase(); // Update button text
+  languageToggle.textContent = currentLanguage.toUpperCase(); 
 
-  // Update text content dynamically
+
   document.querySelector('a[href="#projects"]').textContent = textElements[currentLanguage].projects;
   document.querySelector('a[href="#about"]').textContent = textElements[currentLanguage].keyboard;
   document.querySelector('a[href="#contact"]').textContent = textElements[currentLanguage].aboutMe;

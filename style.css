@@ -15,7 +15,7 @@ body {
   scroll-behavior: smooth;
 }
 
-/* Default light theme styles */
+
 body.light-theme {
   background-color: #ffffff;
   color: #000000;
@@ -31,7 +31,7 @@ body.light-theme .hero {
   color: #000000;
 }
 
-/* Dark theme styles */
+
 body.dark-theme {
   background-color: #111111;
   color: #ffffff;
@@ -61,7 +61,6 @@ body.dark-theme .btn {
   color: #ffffff;
 }
 
-/* Default light theme styles */
 body.light-theme .projects {
   background-color: #f5f5f5;
   color: #000000;
@@ -77,7 +76,6 @@ body.light-theme .switches button{
 }
 
 
-/* Dark theme styles */
 body.dark-theme .projects {
   background-color: #1e1e1e;
   color: #ffffff;
