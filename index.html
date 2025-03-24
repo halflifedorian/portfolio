@@ -10,6 +10,9 @@
   </head>
   <body class="light-theme">
     <main>
+      <div id="loading-spinner">
+        <div class="spinner"></div>
+      </div>
       <div id="popup" class="popup">
         <div class="popup-content">
           <h2>Website Under Construction</h2>
@@ -21,90 +24,28 @@
         <nav>
           <div class="logo">portfolio.</div>
           <ul class="nav-links">
-            <li><a href="#projects">Socials</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#about">Keyboard</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">About me</a></li>
+            <li><a href="https://github.com/halflifedorian/corne">Keyboard</a></li>
+            <li><a href="https://halflifedorian.github.io/VerdantOS/">VerdantOS</a></li>
+            <li><a href="https://github.com/halflifedorian/caac/">Caac</a></li>
             <div class="vl"></div>
-            <li><a href="github.com/halflifedorian"><i class="fa-brands fa-github fa-xl"></i></a></li>
+            <li><a href="https://github.com/halflifedorian"><i class="fa-brands fa-github fa-xl"></i></a></li>
           </ul>
           <div class="switches">
-            <button id="theme-toggle">🌙</button>
             <button id="language-toggle">EN</button>
           </div>
         </nav>
    </header>
   
-   <!-- Hero Section -->
    <section class="hero">
      <div class="hero-content">
        <p>Type something...</p>
        <input type="text" id="dynamic-input" placeholder="">
-       <script>const input = document.getElementById('dynamic-input');
-        const placeholders = [
-          "search..",
-          "github..",
-          "socials..",
-          "keyboard..",
-          "projects..",
-          "about me..",
-        ];
-        let placeholderIndex = 0;
-        let charIndex = 0;
-
-        function typePlaceholder() {
-          if (charIndex < placeholders[placeholderIndex].length) {
-            input.setAttribute('placeholder', placeholders[placeholderIndex].substring(0, charIndex + 1));
-            charIndex++;
-            setTimeout(typePlaceholder, 100); // Typing speed (100ms per character)
-          } else {
-            setTimeout(deletePlaceholder, 1000); // Wait 1 second before deleting
-          }
-        }
-
-        function deletePlaceholder() {
-          if (charIndex >= 0) {
-            input.setAttribute('placeholder', placeholders[placeholderIndex].substring(0, charIndex));
-            charIndex--;
-            setTimeout(deletePlaceholder, 50); // Deleting speed (50ms per character)
-          } else {
-            placeholderIndex = (placeholderIndex + 1) % placeholders.length; // Move to the next placeholder
-            setTimeout(typePlaceholder, 500); // Wait 0.5 seconds before typing again
-          }
-        }
-
-        typePlaceholder(); // Start the animation
-        
-        input.addEventListener('keydown', function (event) {
-          if (event.key === 'Enter') { // Check if Enter key is pressed
-            const userInput = input.value.trim().toLowerCase(); // Get and clean the input
-            redirectUser(userInput); // Call the redirect function
-          }
-        });
-
-        function redirectUser(input) {
-          // Define keywords and their corresponding URLs
-          const redirectMap = {
-            "github": "https://github.com/halflifedorian",
-            "socials": "/socials",
-            "keyboard": "/keyboard",
-            "project": "https://example.com/projects",
-            "about me": "https://example.com/blog"
-          };
-
-          // Check if the input matches a keyword
-          if (redirectMap[input]) {
-            window.location.href = redirectMap[input]; // Redirect to the URL
-          }
-        }</script>
         <h1>Hello, I'm Dorian</h1>
-        <h3>a design enthusiast</h3>
+        <h3>a tech enthusiast</h3>
         <button>learn more</button>
      </div>
    </section>
   
-   <!-- About Section -->
     <section id="about" class="about">
      <h1>About Me</h1>
      <div class="about-content">
@@ -116,7 +57,6 @@
      </div>
    </section>
   
-   <!-- Projects Section -->
    <section id="projects" class="projects">
      <h2>My Projects</h2>
      <div class="project-grid">
@@ -144,7 +84,6 @@
      </div>
     </section>
 
-   <!-- Contact Section -->
    <section id="contact" class="contact">
      <h2>Contact Me</h2>
      <form>
@@ -155,12 +94,10 @@
      </form>
    </section>
 
-   <!-- Footer -->
    <footer>
-      <p>made from scratch by me using neovim</p>
+      <p>made from scratch by me</p>
       <div class="social-links">
         <a href="#">GitHub</a>
-        <a href="#">Instagram</a>
       </div>
     </footer>
     </main>
