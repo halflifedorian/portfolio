@@ -6,35 +6,19 @@
   color: white;
 }
 
-#loading-spinner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.spinner {
-  width: 50px;
-  height: 50px;
-  border: 5px solid #ddd;
-  border-top: 5px solid palevioletred;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-body.loaded #loading-spinner {
-  display: none;
+section {
+  animation: fadeIn 1s ease-in-out;
 }
 
 body {
@@ -139,14 +123,17 @@ section.visible {
 .switches {
   display: flex;
   gap: 10px;
+  align-self: baseline;
+  margin-top: 20px;
 }
 
 .switches button {
+  text-align: center;
   color: #1e1e1e;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 h1, h2, h3 {
@@ -353,7 +340,6 @@ button:active::after {
   border-radius: 50%;
 }
 
-
 .projects {
   padding: 80px 10%;
   background: #F5F5F5;
@@ -390,6 +376,44 @@ button:active::after {
   border-radius: 10px;
 }
 
+.skills {
+  padding: 80px 10%;
+  background: white;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.skill h3 {
+  margin-bottom: 10px;
+}
+
+.progress-bar {
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
+  height: 10px;
+}
+
+.progress {
+  height: 100%;
+  background: #d45d7d;
+  border-radius: 5px;
+  animation: bounce 3s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(1.1);
+  }
+}
 
 .contact {
   padding: 80px 10%;
@@ -407,6 +431,7 @@ form input, form textarea {
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  color: black;
 }
 
 footer {

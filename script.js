@@ -10,6 +10,12 @@ window.addEventListener('load', () => {
   });
 });
 
+const learnMoreButton = document.getElementById('learn-more');
+const aboutSection = document.getElementById('about');
+
+learnMoreButton.addEventListener('click', () => {
+  aboutSection.scrollIntoView({ behavior: 'smooth' });
+});
 
 const languageToggle = document.getElementById('language-toggle');
 const textElements = {
