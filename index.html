@@ -40,7 +40,7 @@
      <div class="hero-content">
        <p>Type something...</p>
        <input type="text" id="dynamic-input" placeholder="">
-        <h1>Hello, I'm Dorian</h1>
+        <h1>Hello, I'm <span class="highlight">Dorian</span></h1>
         <h3>a tech enthusiast</h3>
         <button id="learn-more">learn more</button>
      </div>
@@ -50,9 +50,13 @@
      <h1>About Me</h1>
      <div class="about-content">
        <p>
-          I'm a high school student from France with a passion for multimedia, design, and technology. 
-          I love creating websites, programming, and testing tech-related things. My goal is to study 
-          multimedia and internet technologies at university and turn my passion into a career.
+        I'm a high school student from France with a passion for <span class="highlight2">multimedia, design, and technology</span>. 
+        I love creating websites, programming, and testing tech-related things. My goal is to study 
+        multimedia and programming at university and turn my passion into a career. 
+        I also enjoy working on <span class="highlight2">3D projects with Blender</span> and experimenting with 
+        <span class="highlight2">music production using FL Studio</span>. 
+        Additionally, I run my own Minecraft server, which has given me hands-on experience with 
+        <span class="highlight2">network configuration, server management, and troubleshooting</span>.
        </p>
      </div>
    </section>
@@ -61,19 +65,19 @@
     <h2>My Skills</h2>
     <div class="skills-grid">
       <div class="skill">
-        <h3>HTML</h3>
+        <h3><span class="highlight2">HTML</span></h3>
         <div class="progress-bar">
           <div class="progress" style="width: 90%;"></div>
         </div>
       </div>
       <div class="skill">
-        <h3>CSS</h3>
+        <h3><span class="highlight2">CSS</span></h3>
         <div class="progress-bar">
           <div class="progress" style="width: 70%;"></div>
         </div>
       </div>
       <div class="skill">
-        <h3>JavaScript</h3>
+        <h3><span class="highlight2">JavaScript</span></h3>
         <div class="progress-bar">
           <div class="progress" style="width: 20%;"></div>
         </div>
@@ -86,21 +90,21 @@
      <div class="project-grid">
        <div class="project-card">
          <img src="project1.jpg" alt="Project 1">
-         <h3>Corne keyboard</h3>
+         <h3><span class="highlight2">Corne keyboard</span></h3>
          <p>My wired 48 key keyboard using different layers to work.</p>
          <br>
          <button>here</button>
        </div>
        <div class="project-card">
          <img src="project2.jpg" alt="Project 2">
-         <h3>VerdantOS</h3>
+         <h3><span class="highlight2">VerdantOS</span></h3>
          <p>A archlinux based operating system I'm trying to make using archiso.</p>
          <br>
          <button>here</button>
        </div>
        <div class="project-card">
          <img src="project3.jpg" alt="Project 3">
-         <h3>Caac</h3>
+         <h3><span class="highlight2">Caac</span></h3>
          <p>A python demake of the famous game The Binding Of Isaac.</p>
          <br>
          <button>here</button>
@@ -113,13 +117,13 @@
      <form action="https://formspree.io/f/xkgjzbop" method="POST">
        <input type="text" placeholder="Your Name" required>
        <input type="email" placeholder="Your Email" required>
-       <textarea placeholder="Your Message" required></textarea>
+       <textarea name="message" placeholder="Your Message" required></textarea>
        <button type="submit" class="btn">Send Message</button>
      </form>
    </section>
 
    <footer>
-      <p>made from scratch by me</p>
+      <p>made from scratch by myself &copy; Dorian</p>
       <div class="social-links">
         <a href="#">GitHub</a>
       </div>

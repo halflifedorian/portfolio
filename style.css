@@ -335,9 +335,28 @@ button:active::after {
   margin-top: 40px;
 }
 
-.about-content img {
-  width: 200px;
-  border-radius: 50%;
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.highlight {
+  background: #ffe6e6;
+  padding: 2px 5px;
+  border-radius: 20px;
+  color: #d45d7d;
+  font-weight: bold;
+}
+
+.highlight2 {
+  background: #ffe6e6;
+  padding: 2px 5px;
+  border-radius: 3px;
+  color: #d45d7d;
+  font-weight: bold;
 }
 
 .projects {
@@ -348,6 +367,12 @@ button:active::after {
 .projects button{
   padding: 8px 16px;
   font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.projects button:hover {
+  transform: scale(1.1); /* Makes the button 10% bigger */
 }
 
 .project-grid {

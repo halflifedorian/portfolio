@@ -24,11 +24,11 @@ const textElements = {
     projects: 'Projects',
     keyboard: 'Keyboard',
     aboutMe: 'About Me',
-    heroGreeting: "Hello, I'm Dorian",
+    heroGreeting: "Hello, I'm <span class='highlight'>Dorian</span>",
     heroSubtext: 'a tech enthusiast',
     learnMore: 'learn more',
     aboutHeading: 'About Me',
-    aboutText: "I'm a high school student from France with a passion for multimedia, design, and technology. I love creating websites, programming, and testing tech-related things. My goal is to study multimedia and internet technologies at university and turn my passion into a career.",
+    aboutText: "I'm a high school student from France with a passion for <span class='highlight2'>multimedia, design, and technology</span>. I love creating websites, programming, and testing tech-related things. My goal is to study multimedia and programming at university and turn my passion into a career. I also enjoy working on <span class='highlight2'>3D projects with Blender</span> and experimenting with <span class='highlight2'>music production using FL Studio</span>. Additionally, I run my own Minecraft server, which has given me hands-on experience with <span class='highlight2'>network configuration, server management, and troubleshooting</span>.",
     contactHeading: 'Contact Me',
     contactName: 'Your Name',
     contactEmail: 'Your Email',
@@ -46,11 +46,11 @@ const textElements = {
     projects: 'Projets',
     keyboard: 'Clavier',
     aboutMe: 'À propos de moi',
-    heroGreeting: "Bonjour, je suis Dorian",
+    heroGreeting: "Bonjour, je suis <span class='highlight'>Dorian</span>",
     heroSubtext: 'un passionné de technologie',
     learnMore: 'en savoir plus',
     aboutHeading: 'À propos de moi',
-    aboutText: "Je suis un lycéen français passionné par le multimédia, le design et la technologie. J'adore créer des sites web, programmer et tester des choses liées à la technologie. Mon objectif est d'étudier les technologies multimédias et internet à l'université et de transformer ma passion en carrière.",
+    aboutText: "Je suis un lycéen français passionné par le <span class='highlight2'>multimédia, le design et la programmation</span>. J'adore créer des sites web, programmer et tester des choses liées à la technologie. Mon objectif est d'étudier tout ce qui concerne le multimédia et la programmation à l'université et de transformer ma passion en carrière. J'aime également travailler sur des <span class='highlight2'>projets 3D avec Blender</span> et expérimenter la <span class='highlight2'>production musicale avec FL Studio</span>. De plus, je gère mon propre serveur Minecraft, ce qui m'a permis d'acquérir une expérience pratique en <span class='highlight2'>configuration réseau, gestion de serveur et dépannage</span>.",
     contactHeading: 'Contactez-moi',
     contactName: 'Votre Nom',
     contactEmail: 'Votre Email',
@@ -77,13 +77,13 @@ languageToggle.addEventListener('click', () => {
   document.querySelector('a[href="https://github.com/halflifedorian/caac/"]').textContent = textElements[currentLanguage].aboutMe;
 
   // Update hero section
-  document.querySelector('.hero-content h1').textContent = textElements[currentLanguage].heroGreeting;
+  document.querySelector('.hero-content h1').innerHTML = textElements[currentLanguage].heroGreeting;
   document.querySelector('.hero-content h3').textContent = textElements[currentLanguage].heroSubtext;
   document.querySelector('.hero-content button').textContent = textElements[currentLanguage].learnMore;
 
-  // Update about section
+  // Update the "About Me" section
   document.querySelector('#about h1').textContent = textElements[currentLanguage].aboutHeading;
-  document.querySelector('#about .about-content p').textContent = textElements[currentLanguage].aboutText;
+  document.querySelector('#about .about-content p').innerHTML = textElements[currentLanguage].aboutText; // Use innerHTML here
 
   // Update projects section
   const projectCards = document.querySelectorAll('.project-card');
@@ -106,8 +106,6 @@ const input = document.getElementById('dynamic-input');
         const placeholders = [
           "search..",
           "github..",
-          "socials..",
-          "keyboard..",
           "projects..",
           "about me..",
         ];
@@ -149,12 +147,22 @@ const input = document.getElementById('dynamic-input');
             "github": "https://github.com/halflifedorian",
             "socials": "/socials",
             "keyboard": "/keyboard",
-            "project": "https://example.com/projects",
-            "about me": "https://example.com/blog"
+            "projects": "#projects",
+            "about me": "#about"
           };
 
           if (redirectMap[input]) {
-            window.location.href = redirectMap[input]; 
+            if (redirectMap[input].startsWith("#")) {
+              // Smooth scroll to the section
+              const targetSection = document.querySelector(redirectMap[input]);
+              if (targetSection) {
+                targetSection.scrollIntoView({ behavior: "smooth" });
+              }
+            } else {
+              // Redirect to the URL
+              window.location.href = redirectMap[input];
+            }
+            
           }
         }
 
