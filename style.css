@@ -216,8 +216,19 @@ nav {
   transition: width 0.3s ease;
 }
 
+
 .nav-links li a:hover::after {
   width: 100%;
+}
+
+
+.nav-links li a.no-underline:hover::after {
+  color: palevioletred;
+  content: none;
+}
+
+.nav-links li a.no-underline:hover {
+  color: palevioletred;
 }
 
 .vl {
@@ -314,7 +325,7 @@ button:active::after {
 }
 
 .hero button:hover{
-  transform: translateY(-5px);
+  transform: translateY(5px);
 }
 
 
